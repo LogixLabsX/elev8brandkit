@@ -1,14 +1,23 @@
----
-name: HTML Starter
-slug: html-starter-with-analytics
-description: HTML5 template with analytics and advanced routing configuration.
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html
-relatedTemplates:
-  - nextjs-boilerplate
----
+# elev8 Labs — Creator Brand & Campaign Kit
 
-# HTML Starter
+Static site. Deployed at **https://elev8brandkit.vercel.app**
 
-This is a starter HTML5 templates which is configured with Vercel Analytics (through a `script` tag), advanced routing with [Vercel Edge Middleware](https://vercel.com/docs/concepts/functions/edge-middleware), as well as some basic styles
+- `/` — the kit (5 sections, images inlined so the page is self-contained)
+- `/assets/` — browsable download page, 57 files
+- `/ELEV8-Creator-Assets.zip` — everything
+- `/products.zip` · `/logos.zip` · `/templates.zip` — per folder
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html)
+Zips are served `Content-Disposition: attachment`. The whole site is `noindex`
+(middleware header + robots.txt).
+
+## Regenerating
+
+Built from the `elev8-labs` repo:
+
+```bash
+pnpm creators:build       # product sheet from src/lib/creators/
+pnpm creators:templates   # 36 post templates
+pnpm creators:site        # assembles .creator-site/
+```
+
+Then copy `.creator-site/` over this repo and push.
